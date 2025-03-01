@@ -28,7 +28,11 @@ jobs:
           architecture: x64
 
       - name: Build with Maven
-        run: mvn -B package --file pom.xml
+        run: |
+          cd status-checker
+          mvn -B package
 
       - name: Run tests
-        run: mvn test
+        run: |
+          cd status-checker
+          mvn test
